@@ -1,0 +1,117 @@
+\documentclass[11pt, latterpaper]{article}
+\usepackage [utf8]{inputenc}
+\usepackage [resetlabels, labeled]{multibib}
+\usepackage [T2A]{fontenc}
+\usepackage [top=2cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage {graphicx}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+
+\graphicspath{{/}}
+
+\linespread{1.5} %interval
+
+\title{KaTeX document title}
+\author{lyalya \thanks{nyanya}}
+\date{21.09.2026}
+\begin{document}
+\maketitle
+We have now added a \textbf{title}, \underline{author} and \textit{date} to our first \LaTeX document!
+
+Ляляля
+\section{Первый блок документа}
+
+\section{Формулы триганометрии}
+\subsection{Основное тригонометрическое тождество}
+ $$sin^2 \alpha + cos^2 \alpha = 1 $$
+\subsection{Формулы сложения}
+$$sin(\alpha + \beta)=sin\alpha*cos\beta+cos\alpha*sin\beta$$
+\subsection{Формулы двойного угла}
+$$sin2\alpha=2sin\alpha cos\alpha$$
+\subsection{Формулы понижения степени}
+$$sin^2\alpha=\frac{1-cos2\alpha}{2}$$
+\section{Графики функций}
+\subsection{Синуса}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	title=Синус,
+	xlabel={x},
+	ylabel={y},
+	domain=-6.28:6.28, % Область от -2pi до 2pi
+	samples=100,        % Сглаживание графика
+	minor tick num=2,
+	axis lines=middle   % Пересечение осей в центре
+]
+\addplot[blue, thick] {sin(deg(x))}; % deg(x) преобразует радианы в градусы для корректного расчета
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Косинуса}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	title=Косинус,
+	xlabel={x},
+	ylabel={y},
+	domain=-6.28:6.28,
+	samples=100,
+	minor tick num=2,
+	axis lines=middle
+]
+\addplot[red, thick] {cos(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\section{Таблицы}
+
+\subsection{Синусы}
+Полноразмерная таблица значений функции $y = \sin \alpha$:
+\begin{center}
+\renewcommand{\arraystretch}{2} % Увеличиваем вертикальные отступы в таблице для дробей
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$\alpha$ (град.) & $0^\circ$ & $30^\circ$ & $45^\circ$ & $60^\circ$ & $90^\circ$ & $120^\circ$ & $135^\circ$ & $150^\circ$ & $180^\circ$ \\ \hline
+$\alpha$ (рад.)  & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ & $\dfrac{2\pi}{3}$ & $\dfrac{3\pi}{4}$ & $\dfrac{5\pi}{6}$ & $\pi$ \\ \hline
+$\sin \alpha$   & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & $0$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Косинусы}
+Полноразмерная таблица значений функции $y = \cos \alpha$:
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$\alpha$ (град.) & $0^\circ$ & $30^\circ$ & $45^\circ$ & $60^\circ$ & $90^\circ$ & $120^\circ$ & $135^\circ$ & $150^\circ$ & $180^\circ$ \\ \hline
+$\alpha$ (рад.)  & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ & $\dfrac{2\pi}{3}$ & $\dfrac{3\pi}{4}$ & $\dfrac{5\pi}{6}$ & $\pi$ \\ \hline
+$\cos \alpha$   & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & $0$ & $-\dfrac{1}{2}$ & $-\dfrac{\sqrt{2}}{2}$ & $-\dfrac{\sqrt{3}}{2}$ & $-1$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Арксинусы}
+Таблица главных значений обратной тригонометрической функции $y = \arcsin x$:
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & $-1$ & $-\dfrac{\sqrt{3}}{2}$ & $-\dfrac{1}{2}$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $1$ \\ \hline
+$\arcsin x$ & $-\dfrac{\pi}{2}$ & $-\dfrac{\pi}{3}$ & $-\dfrac{\pi}{6}$ & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Арккосинусы}
+Таблица главных значений обратной тригонометрической функции $y = \arccos x$:
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & $-1$ & $-\dfrac{\sqrt{3}}{2}$ & $-\dfrac{1}{2}$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $1$ \\ \hline
+$\arccos x$ & $\pi$ & $\dfrac{5\pi}{6}$ & $\dfrac{2\pi}{3}$ & $\dfrac{\pi}{2}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{6}$ & $0$ \\ \hline
+\end{tabular}
+\end{center}
+
+\textit{\underline{\textbf{Some text}}}
+\end{document}
