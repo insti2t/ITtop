@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{Экспонента: определение свойства и применение}
+\author{insti2t}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Определение экспоненты}
+Экспоненциальная функция (экспонента) определяется как
+\begin{equation} 
+	e^x=exp(x)
+\end{equation}
+где 
+\begin{equation}
+ e\approx2,71828
+\end{equation}
+число Эйлера, основание натурального логорифма.
+\\
+Альтернативное определение - через предел:
+\begin{equation}
+	 e^x=\lim_{n \to \infty}(1+\frac{x}{n})^n
+\end{equation}
+
+\section{Разложение в ряд Тейлора}
+Одно из важнейших представлений экспоненты - степенной ряд:
+\begin{equation}
+	e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...
+\end{equation}
+Этот ряд сходится при всех $x \in \mathbb{R}$
+\section{Основные свойства}
+Перечислим ключевые свойства экспоненты:
+\begin{itemize}
+	\item Мультипликативность: $e^{x+y}=e^x*e^y$
+	\item Производная равна самой функции: $\frac{d}{dx}e^x=e^x$
+	\item Интеграл: $\int e^xdx=e^x+C$
+	\\
+	\\
+	\item Обратная функция - натуральный логарифм: $ln(e^x)=x$
+	\item Экспонента всегда положительна: $e^x > 0$ для всех $x \in \mathbb{R}$
+\end{itemize}
+\section{Дифференциальное уравнение}
+Экспонента является решением задачи Коши:
+\begin{equation}
+	\frac{dy}{dx}=y, y(0)=1
+\end{equation}
+Решение: $y(x)=e^x$. Это свойство лежит в основе описания процессов экспоненциального роста и распада.
+\section{График экспоненциальной функции}
+Ниже - код для построения графика $y=e^x$ средствами TikZ/pfgplots:
+\begin{figure.}
+
+\section{Примеры применения}
+
+\subsection{Непрерывный рост и распад}
+
+\subsection{Комплексная экспонента и формула Эйлера}
+
+\section{Заключение}
+
+\end{document}
