@@ -17,26 +17,27 @@
 
 \section{Определение экспоненты}
 Экспоненциальная функция (экспонента) определяется как
-\begin{equation} 
+\begin{equation} \label{1}
 	e^x=exp(x)
 \end{equation}
 где 
-\begin{equation}
+\begin{equation}\label{2}
  e\approx2,71828
 \end{equation}
 число Эйлера, основание натурального логорифма.
 \\
 Альтернативное определение - через предел:
-\begin{equation}
+\begin{equation}\label{3}
 	 e^x=\lim_{n \to \infty}(1+\frac{x}{n})^n
 \end{equation}
 
 \section{Разложение в ряд Тейлора}
 Одно из важнейших представлений экспоненты - степенной ряд:
-\begin{equation}
+\begin{equation}\label{4}
 	e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...
 \end{equation}
 Этот ряд сходится при всех $x \in \mathbb{R}$
+Таким образом эти формулы крутые - \ref{1} \ref{2} \ref{3} \ref{4}
 \section{Основные свойства}
 Перечислим ключевые свойства экспоненты:
 \begin{itemize}
@@ -50,20 +51,59 @@
 \end{itemize}
 \section{Дифференциальное уравнение}
 Экспонента является решением задачи Коши:
-\begin{equation}
+\begin{equation}\label{5}
 	\frac{dy}{dx}=y, y(0)=1
 \end{equation}
 Решение: $y(x)=e^x$. Это свойство лежит в основе описания процессов экспоненциального роста и распада.
 \section{График экспоненциальной функции}
 Ниже - код для построения графика $y=e^x$ средствами TikZ/pfgplots:
-\begin{figure.}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=0.7\textwidth,
+height=0.5\textwidth,
+axis lines=middle,
+xlabel={$x$},
+ylabel={$y$},
+xmin=-3, xmax=3,
+ymin=-1, ymax=21,
+grid=both,
+samples=150,
+domain=-3:3,
+legend pos=north west
+]
 
+\addplot[blue, thick]{exp(x)};
+\addlegendentry{$y=e^x$}
+\end{axis}
+\end{tikzpicture}
+\caption{График функций $y=e^x$}
+\label{fig:exp}
+\end{figure}
+Таким образом с помощью формулы \ref{5} мы сделали чтото вроде график
 \section{Примеры применения}
-
 \subsection{Непрерывный рост и распад}
-
+Модель экспоненциального роста:
+$N(t)=N_{0}e^{kt}$
+где:
+\begin{itemize}
+\item$N_{0}$-начальное значение,
+\item$k$-коэффицент роста $(k>0)$ или распада $(k<0)$,
+\item$t$-время.
+Примеры: рост популяции, радиоактивный распад, сложные проценты.
+\end{itemize}
 \subsection{Комплексная экспонента и формула Эйлера}
-
+Для комплексных чисел справедлива формула Эйлера:
+\begin{equation}\label{6}
+e^{ix}=\cos x+i\sin x
+\end{equation}
+Отсюда следует знаменитая тождественная формула:
+\begin{equation}\label{7}
+e^{i\pi}+1=0
+\end{equation}
+Таким образом формулы  \ref{6} \ref{7} тоже крутые!
 \section{Заключение}
+Экспонента - одна из важнейших функций в математике и ее приложениях. Ее уникальные свойства (совпадение функций и производной, мультипликативность, связь, с комплексными числами) делают ее незаменимой в анализе, физике, экономике и инженерии.  
 
 \end{document}
