@@ -16,7 +16,7 @@ git commit -m "My commit"
 
 git commit -a -m "My commit" //Добавить в индекс и создать коммит
 
-git log //Посмотреть список коммитов
+git log //Посмотреть список коммитов (q -- exit)
 
 git push origin main //Отправить изменения на удалённый гит репозиторий
 
