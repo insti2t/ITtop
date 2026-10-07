@@ -3,8 +3,8 @@
 using namespace std;
 
 int factorial(int x) {
-    int res = 0;
-    for (int i = 0; i < x; i++) {
+    int res = 1;  // fix
+    for (int i = 1; i <= x; i++) { // fix
         res *= i;
     }
     return res;
