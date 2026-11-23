@@ -20,10 +20,12 @@ int main() {
     swap(*(arr + 1), *(arr + 6)); 
     swap(*(arr + 2), *(arr + 5));
     swap(*(arr + 3), *(arr + 4));
-    
+
+
     for (int o = 0; o < 8; o++) {
         cout << *(arr + o) << " ";
     }
+
     return 0;
 
 }
